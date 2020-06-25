@@ -284,3 +284,14 @@ def count_likelihood_season(the_season):
         return result
     except IOError as err :
         print("IO Error Number", err.errno, "[", err.strerror, "]")
+
+def get_team_list() :
+    return ["Arsenal", "Aston Villa", "Bournemouth", "Brighton & Hove Albion",
+            "Burnley", "Chelsea", "Crystal Palace", "Everton", "Leicester City",
+            "Liverpool", "Manchester City", "Manchester United", "Newcastle United",
+            "Norwich City", "Sheffield United", "Southampton", "Tottenham Hotspur",
+            "Watford", "West Ham United", "Wolverhampton Wanderers"]
+
+def get_image_path(team) :
+    return os.path.join(sys.path[0], "data\\image\\", team + ".PNG")
+

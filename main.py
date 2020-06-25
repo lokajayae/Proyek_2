@@ -1,15 +1,20 @@
 import utility as utils
-import calculation as calculation 
-import tkinter as tk
+import calculation as calculation
+import gui as gui
 
 utils.clean_player_data()
 utils.clean_match_data()
+
+
+gui.display()
 
 home_team = "Manchester United"
 away_team = "Chelsea"
 date = "11/08/2019"
 season = utils.get_season(date)
 
+
+utils.get_image_path(home_team)
 utils.generate_data_for_calculation(home_team, away_team, utils.get_year(date))
 
 calculation.generate_all_data(home_team, season)
