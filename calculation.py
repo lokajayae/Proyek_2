@@ -155,3 +155,15 @@ def calculate_result() :
     result.append(lose_percentage)
 
     return result
+
+def calculate(home, away, season) :
+    generate_all_data(home, season)
+
+    if laplace_estimator_is_estimator_needed() :
+        do_laplace_estimator()
+
+    calculate_win_probability(home, away, season)
+    calculate_draw_probability(home, away, season)
+    calculate_lose_probability(home, away, season)
+
+    return calculate_result()
