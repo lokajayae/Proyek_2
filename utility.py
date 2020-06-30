@@ -2,6 +2,8 @@ import csv
 import os
 import sys
 
+year_length = 5
+
 def clean_player_data():
     team_list = ["Liverpool", "Manchester City", "Leicester City", "Chelsea", "Manchester United", "Wolverhampton Wanderers",
                 "Sheffield United", "Tottenham Hotspur", "Arsenal", "Burnley", "Crystal Palace", "Everton", "Watford",
@@ -126,11 +128,11 @@ def generate_data_for_calculation(home_team, away_team, year) :
             season = get_season(row[0])
 
             if row[1] == home_team and row[2] == away_team :
-                if int(year) - int(get_year(row[0])) <= 5 :
+                if int(year) - int(get_year(row[0])) <= year_length :
                     writer.writerow([row[0], row[1], row[2], season, row[3], row[4], row[5]])
             
             if row[1] == away_team and row[2] == home_team :
-                if int(year) - int(get_year(row[0])) <= 5 :
+                if int(year) - int(get_year(row[0])) <= year_length :
                     writer.writerow([row[0], row[1], row[2], season, row[3], row[4], row[5]])
                     
     except IOError as err :
