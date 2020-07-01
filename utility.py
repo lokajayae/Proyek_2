@@ -297,3 +297,23 @@ def get_team_list() :
 def get_image_path(team) :
     return os.path.join(sys.path[0], "data\\image\\", team + ".PNG")
 
+def set_year_length(new_year):
+    global year_length
+    year_length = new_year
+
+def split_list(the_list, delimiter):
+    head = 0
+    tail = 0
+    result = []
+
+    length = len(the_list[0])
+
+    for i in range(0, length) :
+        if the_list[0][i] == delimiter :
+            tail = i
+            result.append(the_list[0][head : tail])
+            head = i + 1
+
+    result.append(the_list[0][length-1 : length])
+    return result
+        
