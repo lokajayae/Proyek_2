@@ -150,9 +150,9 @@ def calculate_result() :
     lose_percentage = (lose_probability / divisor) * 100
 
     result = []
-    result.append(win_percentage)
-    result.append(draw_percentage)
-    result.append(lose_percentage)
+    result.append("{:.2f}".format(win_percentage))
+    result.append("{:.2f}".format(draw_percentage))
+    result.append("{:.2f}".format(lose_percentage))
 
     return result
 
